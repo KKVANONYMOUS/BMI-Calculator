@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>BMI Calculator</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+ <style type="text/css" >
+ body{
+	background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)) , url('wp.jpg');
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: center;
+    background-size: cover;
+}	
+ </style>
+</head>
+<body><br><br><br><br><br><br>
+<center>
+	<div class="container">
+	<div class="card" style="height: 390px; width: 400px;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+		<div class="card-body">
+			<div class="card-header text-center bg-warning text-white" style="margin-bottom:2px; border-radius:10px;">
+				BMI Calculator
+			</div>
+			<div class="card-text">
+				<form>
+					<div class="form-group text-left">
+						<label class="text-left">Weight :<input type="text" id="weight"class="form-control" placeholder="Weight in Kg" style="width:350px;"></label><br>
+						<label class="text-left">Height :<input type="text" id="height" onkeyup="input()" class="form-control" placeholder="Height in cm" style="width:350px;"></label><br>
+						<label class="text-left" style="margin-bottom:0px;">BMI Value :<input type="text" id="output" class="form-control" style="width:350px;"></label>
+					</div>
+				</form>
+			</div>
+			<div class="text-left">
+				<button type="button" style="margin-top: 0px;" class="btn btn-outline-success" onclick="output()" >Check BMI</button>
+			</div>
+			<div class="card-footer text-center " style="margin-top:3px;">
+				A healthy BMI ranges between 19 and 25
+			</div>
+		</div>
+	</div>
+</div>
+</center>
+<script type="text/javascript">
+	var bmi;
+	function input(){
+		var weight=document.getElementById("weight").value;
+		var height=document.getElementById("height").value;
+		var nheight=height/100;
+		var calc=weight/(nheight*nheight);
+        bmi=calc.toPrecision(3);
+        return bmi;
+	}
+	 function output(){
+	 	if(bmi>=19 && bmi<=25)
+	 	document.getElementById("output").value = bmi+"                                             "+"You are healthy";
+	 }
+
+</script>
+</body>
+</html>
